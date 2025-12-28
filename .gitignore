@@ -1,0 +1,16 @@
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+
+# Conda
+*.conda
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Data (edit if needed)
+data/
