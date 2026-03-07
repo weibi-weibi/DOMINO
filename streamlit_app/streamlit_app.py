@@ -29,17 +29,15 @@ st.sidebar.header("Filters")
 model_options = ['All Reasons', 'Crossing', 'Blocking']
 selected_model = st.sidebar.selectbox("Select Model", model_options)
 
-if selected_model == 'All Reasons':
-    file_path = os.path.join(DATA_DIR, 'TGAT', '1stage', 'final_predictions.csv')
-    file_modified_time = os.path.getmtime(file_path)
-elif selected_model == 'Crossing':
-    file_path = os.path.join(DATA_DIR, 'TGAT', '1stage', 'final_predictions_c1134.csv')
-    file_modified_time = os.path.getmtime(file_path)
-else:
-    file_path = os.path.join(DATA_DIR, 'TGAT', '1stage', 'final_predictions_c1137.csv')
-    file_modified_time = os.path.getmtime(file_path)
 
-df = load_data(file_path, file_modified_time)
+if selected_model == 'All Reasons':
+    df = pd.read_csv(f"https://drive.google.com/file/d/1NfBRi9LQA_NQ1hRJyh4uvxJ0sID6VDvZ/view?usp=sharing")
+elif selected_model == 'Crossing':
+    df = pd.read_csv(f"https://drive.google.com/file/d/127gsQ4Ks-kzuEtHqzsntxL6t3OofPH6e/view?usp=sharing")
+else:
+    df = pd.read_csv(f"https://drive.google.com/file/d/1VvUCWo0KrVPXuFr1akc8jeHqhR7A1Aie/view?usp=sharing")
+
+
 
 
 
