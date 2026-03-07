@@ -31,14 +31,14 @@ selected_model = st.sidebar.selectbox("Select Model", model_options)
 
 
 if selected_model == 'All Reasons':
-    file_id = "1NfBRi9LQA_NQ1hRJyh4uvxJ0sID6VDvZ"    
+    file_id = "1tkP_byD1ZHeWxxwLzJ3a_DogUggc2eir"    
 elif selected_model == 'Crossing':
-    file_id = "127gsQ4Ks-kzuEtHqzsntxL6t3OofPH6e" 
+    file_id = "1tkP_byD1ZHeWxxwLzJ3a_DogUggc2eir" 
 else:
-    file_id = "1VvUCWo0KrVPXuFr1akc8jeHqhR7A1Aie" 
+    file_id = "1tkP_byD1ZHeWxxwLzJ3a_DogUggc2eir" 
 
 url = f"https://drive.google.com/uc?id={file_id}"
-df = pd.read_csv(url)
+df = pd.read_parquet(url)
 
 
 
