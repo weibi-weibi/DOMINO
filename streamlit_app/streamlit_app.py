@@ -31,13 +31,14 @@ selected_model = st.sidebar.selectbox("Select Model", model_options)
 
 
 if selected_model == 'All Reasons':
-    df = pd.read_csv(f"https://drive.google.com/file/d/1NfBRi9LQA_NQ1hRJyh4uvxJ0sID6VDvZ/view?usp=sharing")
+    file_id = "1NfBRi9LQA_NQ1hRJyh4uvxJ0sID6VDvZ"    
 elif selected_model == 'Crossing':
-    df = pd.read_csv(f"https://drive.google.com/file/d/127gsQ4Ks-kzuEtHqzsntxL6t3OofPH6e/view?usp=sharing")
+    file_id = "127gsQ4Ks-kzuEtHqzsntxL6t3OofPH6e" 
 else:
-    df = pd.read_csv(f"https://drive.google.com/file/d/1VvUCWo0KrVPXuFr1akc8jeHqhR7A1Aie/view?usp=sharing")
+    file_id = "1VvUCWo0KrVPXuFr1akc8jeHqhR7A1Aie" 
 
-
+url = f"https://drive.google.com/uc?id={file_id}"
+df = pd.read_csv(url)
 
 
 
