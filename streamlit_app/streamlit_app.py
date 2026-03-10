@@ -15,11 +15,10 @@ st.title("TGAT & G Model Dashboard")
 # ----------------------------------------------------
 # Load Data
 # ----------------------------------------------------
-DATA_DIR = os.path.join("data")
 @st.cache_data
-
 def load_data(path, mtime):
-    return pd.read_parquet(path)
+    return pd.read_csv(path)
+
 
 # ----------------------------------------------------
 # Sidebar Filters
@@ -31,14 +30,14 @@ selected_model = st.sidebar.selectbox("Select Model", model_options)
 
 
 if selected_model == 'All Reasons':
-    file_path = os.path.join(DATA_DIR, 'final_predictions.parquet')
+    file_id = "1tkP_byD1ZHeWxxwLzJ3a_DogUggc2eir"    
 elif selected_model == 'Crossing':
-    file_path = os.path.join(DATA_DIR, 'final_predictions_c1134.parquet')
+    file_id = "1uJXmczyaAJ6yui1j6DUHc5mOUflC2MNb" 
 else:
-    file_path = os.path.join(DATA_DIR, 'final_predictions_c1137.parquet')
+    file_id = "1i4Eg7tChy5LgCaz7L6lFMy3LbQQaXfD-" 
 
-file_modified_time = os.path.getmtime(file_path)
-df = load_data(file_path, file_modified_time)
+url = f"https://drive.google.com/uc?id={file_id}"
+df = pd.read_parquet(url)
 
 
 
